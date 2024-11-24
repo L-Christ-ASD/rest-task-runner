@@ -3,4 +3,7 @@ version: '3'
 tasks:
   hello:
     cmds:
-      - echo "Hello world !"
+      - echo "Hello Devops ! My name is $(whoami)"
+  rest-task-runner: 
+    desc: Exécute le runner de tâches REST 
+      cmds: - echo "Exécution du runner de tâches REST" - go run main.go
