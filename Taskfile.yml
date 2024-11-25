@@ -4,6 +4,11 @@ tasks:
   hello:
     cmds:
       - echo "Hello Devops ! My name is $(whoami)"
-  rest-task-runner: 
-    desc: Exécute le runner de tâches REST 
-      cmds: - echo "Exécution du runner de tâches REST" - go run main.go
+
+  build:
+    cmds:
+      - CGO_ENABLED=0 go build -o bin/task-runner .
+  deploy:
+    cmds:
+      - scp ~/go/src/challenge_linux_s06/rest-task-runner/rest-task-runner/rest-task-runner student@l-christ-asd-server.eddi.cloud:/home/student/
+    desc: "Déploiement de l'exécutable rest-task-runner, sur le serveur distant"
