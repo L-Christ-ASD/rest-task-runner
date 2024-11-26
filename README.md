@@ -35,3 +35,6 @@ Ce projet vous permettra de consolider vos compétences techniques et d’appré
 - [x] 9. Définir et mettre en place des statistiques de services
 - [x] 10. Exploiter une solution de supervision
 - [ ] 11. Echanger sur des réseaux professionnels éventuellement en anglais
+
+
+Correction  

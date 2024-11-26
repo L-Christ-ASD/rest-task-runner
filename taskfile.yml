@@ -1,0 +1,21 @@
+version: "3"
+
+tasks:
+  backup:
+    cmds:
+      - rsync -a -p --delete student@l-christ-asd-server.eddi.cloud:/home/student/backup/
+  
+  deploy:
+    cmds:
+      - scp backup_home.sh student@l-christ-asd-server.eddi.cloud:/home/student/backup_home.sh
+      - ssh student@l-christ-asd-server.eddi.cloud "chmod a+x backup_home.sh"
+      - scp analyse.sh student@l-christ-asd-server.eddi.cloud:/home/student/analyse.sh
+      - ssh student@l-christ-asd-server.eddi.cloud "chmod a+x analyse.sh"
+  
+  analyse:
+    cmds:
+      - ./analyse.sh
+  
+  run:
+    cmds:
+      - task backup
