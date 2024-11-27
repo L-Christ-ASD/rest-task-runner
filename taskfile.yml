@@ -19,3 +19,8 @@ tasks:
   run:
     cmds:
       - task backup
+
+  pgsql:
+    cmds:
+      - chmod +x install_pgsql.sh
+      - bash install_pgsql.sh
